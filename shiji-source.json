@@ -1,0 +1,17 @@
+{
+  "source": "https://github.com/baojie/shiji-kb",
+  "source_commit": "6b836e3fac1b900ccc6e9299fd6896c0e18ec132",
+  "installed_at": "2026-10-22",
+  "installation_scope": [
+    "130 chapter source files with entity annotations",
+    "event index and event relations",
+    "entity, place, genealogy, chronology and relation data",
+    "project skill documents"
+  ],
+  "excluded": [
+    "large PDF scan",
+    "wiki snapshot",
+    "repository images"
+  ],
+  "license_note": "The upstream README states that annotated data is CC BY-NC-SA 4.0 and analysis scripts are MIT. The website uses selected excerpts for non-commercial learning."
+}

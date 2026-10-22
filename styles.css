@@ -294,6 +294,13 @@ body[data-theme="dark"] .moon-icon {
   font-size: 12px;
 }
 
+.shiji-entry {
+  display: inline-flex;
+  align-items: center;
+  color: var(--green);
+  text-decoration: none;
+}
+
 .primary-button {
   display: inline-flex;
   align-items: center;
@@ -1415,6 +1422,10 @@ footer div {
 
   .secondary-button.compact {
     display: none;
+  }
+
+  .secondary-button.compact.shiji-entry {
+    display: inline-flex;
   }
 
   .hero {

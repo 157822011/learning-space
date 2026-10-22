@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="《史记》人物、事件与关系的互动学习空间。">
+  <meta name="theme-color" content="#101a17">
+  <title>史记 · 千年人物志</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="shiji.css">
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor-light" id="cursorLight" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">史</span>
+      <span>
+        <strong>史记 · 人物志</strong>
+        <small>从黄帝到汉武帝</small>
+      </span>
+    </a>
+    <nav aria-label="页面导航">
+      <a href="#overview">总览</a>
+      <a href="#people">人物</a>
+      <a href="#timeline">事件</a>
+      <a href="#relations">关系</a>
+      <a href="#practice">练习</a>
+    </nav>
+    <div class="header-actions">
+      <button class="sound-toggle" id="introVoiceButton" type="button">
+        <span class="sound-bars" aria-hidden="true"><i></i><i></i><i></i></span>
+        听简介
+      </button>
+      <a class="back-link" href="index.html">返回学习空间</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="overview">
+      <div class="hero-copy reveal">
+        <p class="eyebrow"><span>本纪</span><span>表</span><span>书</span><span>世家</span><span>列传</span></p>
+        <h1>一部史记，<br><em>看见千年人心。</em></h1>
+        <p class="hero-lead">从传说的黄帝到汉武帝时代，司马迁不只记录王朝更替，也记录选择、欲望、失败与不肯屈服的精神。</p>
+        <div class="hero-actions">
+          <a class="primary-button" href="#people">开始漫游 <span>↗</span></a>
+          <button class="ghost-button" id="randomCharacterButton" type="button">
+            <span class="shuffle-icon">◇</span> 随机遇见一人
+          </button>
+        </div>
+        <p class="reading-note">
+          <span></span> 点击人物可听故事 · 建议开启声音
+        </p>
+      </div>
+
+      <div class="hero-art reveal" id="heroArt" aria-hidden="true">
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <div class="orbit orbit-three"></div>
+        <div class="seal">
+          <span class="seal-top">太史公</span>
+          <strong>史</strong>
+          <span class="seal-bottom">究天人之际</span>
+        </div>
+        <span class="orbit-label label-one">本纪</span>
+        <span class="orbit-label label-two">世家</span>
+        <span class="orbit-label label-three">列传</span>
+        <span class="hero-star star-one"></span>
+        <span class="hero-star star-two"></span>
+        <span class="hero-star star-three"></span>
+        <span class="hero-star star-four"></span>
+        <div class="mountain mountain-back"></div>
+        <div class="mountain mountain-front"></div>
+      </div>
+
+      <div class="hero-stats reveal">
+        <div><strong>130</strong><span>篇</span><small>本纪 · 表 · 书<br>世家 · 列传</small></div>
+        <div><strong>57.7</strong><span>万字</span><small>从上古传说<br>写到汉武帝</small></div>
+        <div><strong>3,198</strong><span>事件</span><small>知识库已结构化<br>事件与关系</small></div>
+        <div><strong>14K+</strong><span>实体</span><small>人物、地点、官职<br>与思想概念</small></div>
+      </div>
+    </section>
+
+    <section class="section people-section" id="people">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-index">01 / 人物谱</p>
+          <h2>谁在改变时代？</h2>
+        </div>
+        <p>不是一份“名人名单”，而是一组面对权力、困境和选择的人。选择时代或人物，打开他的历史档案。</p>
+      </div>
+
+      <div class="era-filter reveal" id="eraFilter" role="tablist" aria-label="按时代筛选人物">
+        <button class="era-button active" type="button" data-era="all" role="tab" aria-selected="true">
+          <span>全部</span><small>10 人</small>
+        </button>
+        <button class="era-button" type="button" data-era="ancient" role="tab" aria-selected="false">
+          <span>上古</span><small>传说</small>
+        </button>
+        <button class="era-button" type="button" data-era="spring" role="tab" aria-selected="false">
+          <span>春秋</span><small>礼乐</small>
+        </button>
+        <button class="era-button" type="button" data-era="warring" role="tab" aria-selected="false">
+          <span>战国</span><small>变法</small>
+        </button>
+        <button class="era-button" type="button" data-era="qinhan" role="tab" aria-selected="false">
+          <span>秦汉</span><small>天下</small>
+        </button>
+      </div>
+
+      <div class="character-grid" id="characterGrid" aria-live="polite"></div>
+    </section>
+
+    <section class="section timeline-section" id="timeline">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-index">02 / 时代脉络</p>
+          <h2>历史不是一条直线</h2>
+        </div>
+        <p>沿着时间移动，观察同一个问题在不同年代如何重演：如何获得权力，如何识人，又为何盛极而衰。</p>
+      </div>
+
+      <div class="timeline-shell reveal">
+        <div class="timeline-track" id="timelineTrack" aria-label="史记重要事件时间线"></div>
+        <div class="timeline-progress"><span id="timelineProgress"></span></div>
+      </div>
+      <div class="event-detail" id="eventDetail">
+        <div class="event-year" id="eventYear">前 221</div>
+        <div class="event-main">
+          <span class="event-chapter" id="eventChapter">秦始皇本纪</span>
+          <h3 id="eventTitle">秦统一六国</h3>
+          <p id="eventSummary"></p>
+        </div>
+        <blockquote id="eventQuote"></blockquote>
+        <div class="event-tools">
+          <p id="eventPlain"></p>
+          <button class="read-button" id="readEventButton" type="button">
+            <span class="play-icon">▶</span> 听这段故事
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section relations-section" id="relations">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-index">03 / 人物关系</p>
+          <h2>每个人都不是孤岛</h2>
+        </div>
+        <p>这份关系图展示学习阅读中的主题连接，不代表全部历史关系。点击节点继续人物漫游。</p>
+      </div>
+      <div class="relation-shell reveal">
+        <svg id="relationMap" viewBox="0 0 900 520" role="img" aria-label="史记人物关系图"></svg>
+        <div class="relation-legend">
+          <span><i class="line-solid"></i> 政治与时代关系</span>
+          <span><i class="line-dashed"></i> 精神与后世影响</span>
+          <span class="relation-tip">点击人物可继续探索</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section practice-section" id="practice">
+      <div class="practice-intro reveal">
+        <p class="section-index">04 / 学而时习</p>
+        <h2>你真正记住了什么？</h2>
+        <p>每次只问四题。先凭记忆回答，再看解释，最后回到人物故事中寻找上下文。</p>
+        <div class="quiz-progress">
+          <span id="quizNumber">01</span>
+          <div><i id="quizProgress"></i></div>
+          <small>共 4 题</small>
+        </div>
+      </div>
+      <div class="quiz-card reveal" id="quizCard">
+        <span class="quiz-label">随堂小测</span>
+        <h3 id="quizQuestion"></h3>
+        <div class="quiz-options" id="quizOptions"></div>
+        <div class="quiz-feedback" id="quizFeedback" hidden></div>
+        <button class="text-button" id="nextQuizButton" type="button">下一题 <span>→</span></button>
+      </div>
+    </section>
+
+    <section class="closing reveal">
+      <span class="closing-mark">史</span>
+      <div>
+        <p class="section-index">读史，也是在读自己</p>
+        <h2>“述往事，思来者。”</h2>
+        <p>这一版先打开一扇门。下一步可以继续扩展人物图谱、原文逐段阅读、学习进度和主题研究。</p>
+      </div>
+      <a href="https://github.com/baojie/shiji-kb" target="_blank" rel="noreferrer">查看数据来源 ↗</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>史记 · 千年人物志 <span>学习版 v1</span></p>
+    <p>
+      阅读数据参考
+      <a href="https://github.com/baojie/shiji-kb" target="_blank" rel="noreferrer">史记知识库</a>
+      · 人物头像为程式化艺术徽章，不是历史画像
+    </p>
+    <button id="sourceButton" type="button">资料来源与使用说明</button>
+  </footer>
+
+  <dialog class="character-dialog" id="characterDialog">
+    <button class="dialog-close" id="closeCharacterButton" type="button" aria-label="关闭人物档案">×</button>
+    <div class="dialog-layout">
+      <div class="dialog-portrait" id="dialogPortrait"></div>
+      <div class="dialog-content">
+        <div class="dialog-heading">
+          <div>
+            <span class="dialog-era" id="dialogEra"></span>
+            <h2 id="dialogName"></h2>
+            <p id="dialogTitle"></p>
+          </div>
+          <span class="dialog-chapter" id="dialogChapter"></span>
+        </div>
+        <div class="dialog-meta">
+          <span id="dialogYears"></span>
+          <span id="dialogCategory"></span>
+        </div>
+        <p class="dialog-summary" id="dialogSummary"></p>
+        <div class="story-block">
+          <span class="block-label">一段故事</span>
+          <p id="dialogStory"></p>
+        </div>
+        <blockquote class="original-quote">
+          <span class="block-label">《史记》原文 · 简体转写</span>
+          <p id="dialogQuote"></p>
+          <cite id="dialogCite"></cite>
+        </blockquote>
+        <p class="plain-note" id="dialogPlain"></p>
+        <div class="dialog-tags" id="dialogTags"></div>
+        <div class="dialog-actions">
+          <button class="primary-button voice-button" id="readCharacterButton" type="button">
+            <span class="audio-wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+            听人物故事
+          </button>
+          <button class="ghost-button" id="characterSourceButton" type="button">原文出处</button>
+        </div>
+        <div class="connections-block">
+          <span class="block-label">继续遇见</span>
+          <div id="dialogConnections"></div>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="source-dialog" id="sourceDialog">
+    <button class="dialog-close" id="closeSourceButton" type="button" aria-label="关闭">×</button>
+    <p class="section-index">资料来源</p>
+    <h2>关于这一页</h2>
+    <p>总览统计、人物与事件原始段落参考 <a href="https://github.com/baojie/shiji-kb" target="_blank" rel="noreferrer">baojie/shiji-kb</a>，摘句为方便网页阅读转写为简体并去除实体标注符号。该项目的标注数据声明采用 CC BY-NC-SA 4.0，适合非商业学习与研究。</p>
+    <p>本页只选取少量人物与事件，并补充了现代导读、视觉设计和交互，不是《史记》全文，也不替代学术校勘。人物头像是程式化 SVG 艺术徽章，并非历史画像。</p>
+    <p>朗读使用浏览器内置的语音合成功能，不意味着朗读字音等同于古代读音。不同系统的中文语音效果可能不同。</p>
+    <button class="primary-button close-source" id="closeSourceBottomButton" type="button">继续阅读</button>
+  </dialog>
+
+  <div class="voice-player" id="voicePlayer" aria-live="polite">
+    <div class="voice-bars"><i></i><i></i><i></i><i></i><i></i></div>
+    <div>
+      <strong id="voiceTitle">正在朗读</strong>
+      <span id="voiceSubtitle">浏览器本地语音</span>
+    </div>
+    <button id="stopVoiceButton" type="button" aria-label="停止朗读">停止</button>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="shiji-data.js"></script>
+  <script src="shiji.js"></script>
+</body>
+</html>
