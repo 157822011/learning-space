@@ -1,0 +1,18 @@
+{
+  "name": "拾光 · 我的学习空间",
+  "short_name": "拾光",
+  "description": "把学习目标变成每天可执行的行动。",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f4f0e8",
+  "theme_color": "#1f6b4f",
+  "lang": "zh-CN",
+  "icons": [
+    {
+      "src": "assets/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
